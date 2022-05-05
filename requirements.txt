@@ -1,0 +1,6 @@
+esprima==4.0.1
+numpy==1.22.3
+Pillow==9.1.0
+pyppeteer==1.0.2
+scikit-image==0.19.2
+jscodegen @ git+https://github.com/ksons/jscodegen.py.git@352488826fe3033c5783c99ab344395e5fbe32fd
