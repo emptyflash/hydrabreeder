@@ -1,10 +1,5 @@
 # genetic algorithm search of the one max optimization problem
 from numpy.random import randint
-from numpy.random import rand
-
-# objective function
-def onemax(x):
-	return -sum(x)
 
 # tournament selection
 def selection(pop, scores, k=3):
@@ -21,7 +16,8 @@ async def genetic_algorithm(creation, fitness, mutation, crossover, n_iter, n_po
     # initial population of random bitstring
     pop = [creation() for _ in range(n_pop)]
     # keep track of best solution
-    best, best_eval = 0, await fitness(pop[0])
+    best, best_eval = pop[0], await fitness(pop[0])
+    yield [best, best_eval]
     # enumerate generations
     for gen in range(n_iter):
         print(f"Starting generation {gen}")
